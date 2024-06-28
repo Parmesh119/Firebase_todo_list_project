@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-/home/parmesh/parmesh/technology_docs/firebase/firebase01/src/config/firebase.jsx
+./config/firebase.jsx
 
 # Editor directories and files
 .vscode/*
