@@ -11,16 +11,31 @@ function App() {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    console.log(auth?.currentUser?.email)
+    // console.log(auth?.currentUser?.email)
 
     const authe = async () => {
-        await createUserWithEmailAndPassword(auth, email, password)
+        try {
+            await createUserWithEmailAndPassword(auth, email, password)
+            alert('logged in successfully');
+        } catch(error) {
+            alert(error.message);
+        }
     }
     const SignInWithGoogle = async () => {
-        await signInWithPopup(auth, provider)
+        try {
+            await signInWithPopup(auth, provider)
+            alert('logged in successfully')
+        } catch(error) {
+            alert(error.message);
+        }
     }
     const SignOut = async () => {
-        await signOut(auth)
+        try {
+            await signOut(auth)
+            alert('sign out successfully')
+        }catch(error) {
+            alert(error.message)
+        }
     }
     return (
         <>
