@@ -3,7 +3,7 @@ import Auth from './components/Auth'
 function App() {
   return (
     <>
-      {/* <Auth /> */}
+      <Auth />
       <br />
       <Add_Firebase />
     </>
