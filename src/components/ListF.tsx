@@ -41,6 +41,7 @@ export default function ListF() {
                     <span className="flex flex-row w-full items-center justify-between gap-2 bg-gray-300 p-4 rounded-lg">
                         <h1>List Faculty</h1>
                         <button className="bg-blue-500 text-white px-8 py-2 rounded-md" onClick={() => navigate("/add/F")}>Add</button>
+                        <button className="bg-blue-500 text-white px-8 py-2 rounded-md" onClick={() => navigate("/")} >List User</button>
                     </span>
                     <span className="flex flex-row w-full items-center justify-between gap-2 bg-gray-300 p-4 rounded-lg">
                         <h1>Name</h1>
@@ -51,7 +52,7 @@ export default function ListF() {
                             <h1>{faculty.name}</h1>
                             <h1>{faculty.age}</h1>
                             <button onClick={() => navigate(`/update/F/${faculty.id}`, { state: { faculty } })}  className="bg-blue-500 text-white px-8 py-2 rounded-md">update</button>
-                            <button onClick={() => deleteFaculty(faculty.id)}  className="bg-blue-500 text-white px-8 py-2 rounded-md">delete</button>
+                            <button onClick={() => deleteFaculty(faculty.id)}  className="bg-red-500 text-white px-8 py-2 rounded-md">delete</button>
                         </span>
                     ))}
                 </span>

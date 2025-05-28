@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { getDatabase, ref, onValue, remove } from "firebase/database"
 import { app } from "../utils/firebase"
 import { dbName } from "../utils/config"
@@ -21,10 +21,21 @@ export default function List() {
         remove(userRef)
     }
     return (
-        <div className="flex flex-col bg-gray-300 items-center justify-center h-screen">
+        <>
+        <div className="flex flex-row gap-28 items-start justify-between">
+            <div className="flex flex-col w-40 bg-gray-900 text-white rounded-lg p-4">
+                <span className="text-2xl">Links</span>
+                <span className="flex flex-col mt-8">
+                    <Link to="/add">Add user</Link>
+                    <Link to="/list/F">List faculty</Link>
+                    <Link to="/add/F">Add Faculty</Link>
+                </span>
+            </div>
+        <div className="flex flex-col w-full rounded-lg bg-gray-300 items-center justify-center h-screen">
             <span className="flex flex-row w-full items-center justify-between gap-2 bg-gray-300 p-4 rounded-lg">
                 <h1>List</h1>
                 <button className="bg-blue-500 text-white px-8 py-2 rounded-md" onClick={() => navigate("/add")}>Add</button>
+                <button className="bg-blue-500 text-white px-8 py-2 rounded-md" onClick={() => navigate("/list/F")} >List Faculty</button>
             </span>
             {users && <span className="flex flex-col w-full items-center justify-center gap-2 bg-gray-300 p-4 rounded-lg">
                 {Object.entries(users).map(([id, user]: [string, { name: string, age: number }]) => (
@@ -38,5 +49,7 @@ export default function List() {
             </span>
             }
         </div>
+            </div>
+        </>
     )
 }
