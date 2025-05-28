@@ -64,6 +64,7 @@ export default function Login() {
                     <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="enter your password" className="placeholder:border-2 placeholder:text-black text-black" />
                     <button type="submit" className="bg-blue-500 py-2 px-4 rounded-lg text-white font-bold tracking-wider">Login</button>
                 </form>
+                <button onClick={() => navigate("/register")} className="px-4 py-2 font-bold bg-blue-500 text-white rounded-lg">Register</button>
                 <button onClick={loginWithGoogle} className="px-4 py-2 bg-gray-600 text-white font-bold rounded-lg">Login with Google</button>
             </div>
         </>

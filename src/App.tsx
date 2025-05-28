@@ -7,7 +7,7 @@ import AddF from './components/AddF'
 import ListF from './components/ListF'
 import UpdateF from './components/UpdateF'
 import Login from './components/Login'
-import Register from './components/SignUp'
+import SignUp from './components/SignUp'
 
 function App() {
   const protectedRoute = (children: React.ReactNode) => {
@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={protectedRoute(<List />)} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/register" element={<SignUp />} />
           <Route path="/add" element={protectedRoute(<Add />)} />
           <Route path="/update/:id" element={protectedRoute(<Update />)} />
           <Route path="/list/F" element={protectedRoute(<ListF />)} />
